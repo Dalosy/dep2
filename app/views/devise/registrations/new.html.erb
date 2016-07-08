@@ -1,0 +1,26 @@
+
+ <%= render "devise/shared/layouts" %>    
+ <h3 class="form-title text-center">Зарегистрируйтесь</h3> 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">    
+    <%= f.email_field :email, autofocus: true, class:"form-control input-lg", placeholder: "Логин" %>
+  </div>
+<br />
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "off", class:"form-control input-lg", placeholder: "Пароль" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+  </div>
+
+  <div class="field">    
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control input-lg", placeholder: "Подтверждение" %>
+  </div>
+<br />
+  <div class="actions">
+    <%= f.submit "Sign up", class:"btn1" %>
+  </div>
+<% end %>
+ <%= render "devise/shared/layoutsfooter" %>   

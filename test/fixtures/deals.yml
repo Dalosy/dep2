@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_id: 1
+  summ: 1
+  deal_date: 2016-05-03 18:09:53
+  dep_summ: 1
+  dep_date: 2016-05-03 18:09:53
+  status: MyString
+  agreement: MyString
+
+two:
+  card_id: 1
+  summ: 1
+  deal_date: 2016-05-03 18:09:53
+  dep_summ: 1
+  dep_date: 2016-05-03 18:09:53
+  status: MyString
+  agreement: MyString

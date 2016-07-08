@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_id: 1
+  guaranty_date: 2016-05-08 13:44:28
+  guaranty_sum: 
+  dep_reason: MyString
+  result: MyString
+  dep_how: MyString
+
+two:
+  card_id: 1
+  guaranty_date: 2016-05-08 13:44:28
+  guaranty_sum: 
+  dep_reason: MyString
+  result: MyString
+  dep_how: MyString

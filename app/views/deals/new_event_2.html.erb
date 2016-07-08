@@ -1,0 +1,33 @@
+<%= form_for :event, :url => {:action => 'new_event_but'}, :html => {:class => 'form-inline new_event_but_2'}, remote: true do |f| %>
+    <div class= "row" >
+
+        <div class="form-group">                           
+                <%= f.text_field :event_type_id, class:"hidden",  :value => @eventtype.id %>
+        </div>     
+
+        <div class="form-group">                           
+                <%= f.text_field :card_id, class:"hidden",  :value => @deals.card_id %>
+        </div>
+
+       	<div class="form-group">
+            	<%= f.label 'Сделка'%>        	
+            	<%= f.collection_select(:deal_id, Deal.all, :id, :agreement, {}, {:multiple => false, :class =>'form-control field input-lg'})%>
+        </div>
+
+        <div class="form-group">
+        		<%= f.label 'Сумма задолженности'%>
+            	<%= f.text_field :event_sum, class:"form-control field input-lg", placeholder: "Сумма задолженности" %>
+        </div>
+
+        <div class="form-group">
+        		<%= f.label 'Дата выхода на задолженность'%>         	
+            	<%= f.date_field :event_date, class:"form-control field input-lg", placeholder: "Дата сделки" %>
+        </div>
+
+        <div class="form-group">                 
+            <div class="actions">
+                <%= f.submit "Сохранить", class: "btn1" %>
+            </div> 
+        </div>
+    </div>                     
+<% end %>

@@ -1,0 +1,208 @@
+<div class= "row" > 
+  <div class="col-md-4">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Клиент</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">
+        <%= @card.client %>      
+        </p>
+      </div>
+    </div>
+      <div class="form-group">
+      <label class="col-sm-2 control-label">Адрес</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">
+        <%= @card.address %>
+        </p>
+      </div>
+    </div>
+  </form>
+  </div>
+
+  <div class="col-md-8" >
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#panel1">Контакты</a></li>
+            <li><a data-toggle="tab" href="#panel2">Сделки</a></li>
+            <li><a data-toggle="tab" href="#panel3">Контактные лица</a></li>
+        </ul>
+       
+      <div class="tab-content">
+        <div id="panel1" class="tab-pane fade in active">
+                <div class="form-cards">
+                <table class="table new_number">
+                  <tr>
+                    <th>#</th>
+                    <th>Телефон</th>
+                    <th>Контактное лицо</th>
+                    <th>Тип телефона</th>
+                    <th></th>  
+                    <th></th>      
+                  </tr>
+             
+                <% @telefones.each do |telefone| %>
+                  <tr>
+                    <td><%= telefone.id %></td>
+                    <td><%= telefone.number %></td>
+                    <td><%= telefone.face_id %></td>
+                    <td><%= telefone.number_type %></td>      
+                    <td><%= link_to 'Редактировать', edit_telefone_path(telefone) %></td>
+                    <td><%= link_to 'Удалить', telefone_path(telefone),class: 'row-remove-tel', remote: true,
+                          method: :delete,
+                          data: { confirm: 'Вы точно хотите удалить телефонный номер?' } %></td>
+                  </tr>
+                 <% end %>
+              </table>
+              </div>
+
+               <%= form_for :telefone, :url => {:action => 'new_number_but'}, :html => {:class => 'form-inline new_number_but'}, remote: true do |f| %>
+                  <div class= "row" >
+
+                      <div class="form-group">
+                        <div class="field"> 
+                          <%= f.collection_select(:face_id, Face.all, :id, :fio, {}, {:multiple => false, :class =>'form-control input-lg'})%>                        
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field">      
+                          <%= f.text_field :number, class:"form-control input-lg", placeholder: "Номер" %>
+                        </div>
+                      </div>           
+                      <div class="form-group">
+                        <div class="field"> 
+                          <%= f.text_field :number_type, class:"form-control input-lg", placeholder: "Тип телефона" %>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="actions">
+                          <%= f.submit "Новый телефон", class: "btn1" %>
+                        </div>
+                      </div>
+                  </div>
+              <% end %>
+        </div>
+
+
+        
+        
+        <div id="panel2" class="tab-pane fade">
+                  <div class="form-cards">
+                  <table class="table table-hover new_deals">
+                      <tr>
+                        <th>#</th>
+                        <th>Документ</th>
+                        <th>Сумма</th>
+                        <th>Дата сделки</th> 
+                        <th></th> 
+                        <th></th>          
+                      </tr>
+
+                      <tr> 
+                     <%= form_for :deal, :url => {:action => 'new_deal_but'}, :html => {:class => 'form-horizontal new_deal_but'}, remote: true do |f| %>
+                             <td>#</td>
+
+                             <td>
+                                <%= f.text_field :agreement, class:"form-control input-lg", placeholder: "Номер документа" %>                              
+                            </td>
+
+                             <td>
+                              <div class="field"> 
+                                <%= f.text_field :summ, class:"form-control input-lg", placeholder: "Сумма сделки" %>
+                              </div>
+                            </td>
+                          
+                             <td>
+                              <div class="field"> 
+                                <%= f.date_field :deal_date, class:"form-control input-lg", placeholder: "Дата сделки" %>
+                              </div>
+                            </td>
+
+                             <td>
+                              <div class="field"> 
+                                <%= f.text_field :status, class:"form-control input-lg", placeholder: "Статус" %>
+                              </div>
+                            </td>                    
+                
+                               <td>
+                                <%= f.submit "Сохранить", class: "btn1" %>
+                              </td>  
+
+                      <% end %>
+                      </tr>
+                                           
+                 
+                    <% @deals.each do |deal| %>
+                      <tr>
+                        <td><%= deal.id %></td>
+                        <td><%= deal.agreement %></td>
+                        <td><%= deal.summ %></td> 
+                        <td><%= deal.deal_date %></td>   
+                        <td><%= link_to 'Редактировать', edit_deal_path(deal) %></td>
+                        <td><%= link_to 'Удалить', deal_path(deal),class: 'row-remove-deal', remote: true,
+                              method: :delete,
+                              data: { confirm: 'Вы точно хотите удалить сделку?' } %></td>
+                      </tr>
+                     <% end %>                
+
+                  </table>
+                  </div>
+
+        </div>
+
+
+        <div id="panel3" class="tab-pane fade">
+                <div class="form-cards">
+                <table class="table new_faces">
+                  <tr>
+                    <th>#</th>
+                    <th>ФИО</th>
+                    <th>Должность</th>                     
+                    <th></th>      
+                  </tr>
+             
+                <% @faces.each do |face| %>
+                  <tr>
+                    <td><%= face.id %></td>
+                    <td><%= face.fio %></td>
+                    <td><%= face.position %></td>                    
+                    <td><%= link_to 'Удалить', face_path(face),class: 'row-remove-face', remote: true,
+                          method: :delete,
+                          data: { confirm: 'Вы точно хотите удалить контактное лицо?' } %></td>
+                  </tr>
+                 <% end %>
+              </table>
+              </div>
+
+               <%= form_for :face, :url => {:action => 'new_face_but'}, :html => {:class => 'form-inline new_face_but'}, remote: true do |f| %>
+                  <div class= "row" >
+
+                      <div class="form-group">
+                        <div class="field">      
+                          <%= f.text_field :fio, class:"form-control input-lg", placeholder: "ФИО" %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="field"> 
+                          <%= f.text_field :position, class:"form-control input-lg", placeholder: "Должность" %>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="actions">
+                          <%= f.submit "Сохранить", class: "btn1" %>
+                        </div>
+                      </div>
+                  </div>
+              <% end %>
+        </div>
+
+
+
+
+
+      </div>
+      
+  </div>
+</div>

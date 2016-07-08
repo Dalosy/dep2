@@ -1,0 +1,10 @@
+//= require jquery
+//= require bootstrap-sprockets
+//= require jquery_ujs
+//= require_tree .
+//= require welcome
+//= require telefones
+//= require events
+//= require faces
+//= require deals
+//= require jquery.turbolinks

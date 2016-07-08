@@ -1,0 +1,157 @@
+
+
+.fullscreen {
+    width:100%;
+    min-height:100%;
+	background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-position:50% 50%\9 !important;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#menu {
+	z-index: 99;
+}
+
+.btn-third {
+	font-size: 17px;
+	margin: 30px 0 10px;
+	margin-right: 10px;
+	line-height: 20px;
+	padding: 15px 35px;
+	height: 50px;
+	border: 2px solid #3eb0f7;
+	background: transparent;
+	transition: all 0.4s;
+	color: #3eb0f7;
+	border-radius: 100px;
+}
+
+.btn-primary {
+	font-size: 17px;
+	margin: 30px 0 10px;
+	margin-right: 10px;
+	line-height: 20px;
+	padding: 15px 35px;
+	height: 50px;
+	border: 2px solid #3eb0f7;
+	background: #3eb0f7;
+	transition: all 0.4s;
+	color: white;
+	border-radius: 100px;
+}
+
+.devise-links {	
+	transition: all 0.4s;
+	color: white;
+}
+
+.btn-secondary {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 20px;
+	padding: 20px 50px;
+	height: 65px;
+	border: none;
+	background: #3eb0f7;
+	transition: all 0.4s;
+	color: white;
+	border-radius: 4px;
+}
+
+
+.site-name img {
+	width: 150px; 
+	height: 37px
+}
+.logo {
+	margin: 100px 0 40px 0;
+}
+.logo img{
+	width: 150px; 
+	height: 37px
+}
+.landing h1{
+	font-size: 56px;
+	font-weight: 300;
+	color: #fff;
+	margin: 30px 0 30px 0;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+.landing p, .landing h2 {
+	color: #fff;
+}
+.landing-text {
+	margin-bottom: 20px;
+}
+.landing-text p {
+	font-size: 17px !important; 
+}
+.head-btn {
+	margin-bottom: 150px;
+}
+.option {
+	text-transform: uppercase;
+	padding: 5px;
+	min-width: 80px;
+	margin-right: 5px;
+	transition: all 0.4s;
+	font-size: 14px;
+	color: #fff;
+}
+.signup-header {
+	margin: 150px 0 100px;
+	background: rgba(255,255,255,0.2);
+	border-radius: 4px;
+	padding-left: 20px;
+	padding-right: 20px;	
+}
+.signup-header h3{
+	padding: 20px 0 10px;
+	color: white;
+	font-weight: 300;
+}
+.form-header input {
+	position: relative;
+	padding: 5px 15px;
+}
+.form-header .form-control {
+	border-radius: 0;
+	border: solid 1px #dadada;
+	background-color: #fff;
+	color: #333;
+	height: 55px;
+}
+.btn1 {
+	border-radius: 0;
+	height: 55px;
+	width: 100%;
+	background-color: #3eb0f7;
+	color: white;
+	font-size: 17px !important;
+	padding: 0 33px;
+	border: none;
+	margin: 0;
+	transition: all .8s ease;
+}
+.form-header .btn:hover {
+	background-color: #1f96e0;
+	transition: all .8s ease;
+}
+.privacy {
+	padding-top: 0;
+	font-size: 13px;
+}
+.signup-header p {
+	color: white;
+}
+.privacy a {
+	text-decoration: underline;
+	color: white;
+	font-weight: 300;
+}

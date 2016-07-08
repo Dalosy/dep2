@@ -1,0 +1,8 @@
+<tr>
+  <td><%= @face.id %></td>
+  <td><%= @face.fio %></td>
+  <td><%= @face.position %></td>                    
+  <td><%= link_to 'Удалить', face_path(@face),class: 'row-remove-face new_face', remote: true,
+        method: :delete,
+        data: { confirm: 'Вы точно хотите удалить контактное лицо?' } %></td>
+</tr>

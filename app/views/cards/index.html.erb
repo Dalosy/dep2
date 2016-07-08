@@ -1,0 +1,38 @@
+  <form>
+  <div class="form-group">
+
+	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Клиенты</div>
+
+  <!-- Table -->
+
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Клиент</th>
+    <th>Адрес</th>    
+  </tr>
+ 
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.id %></td>
+      <td><%= card.client %></td>
+      <td><%= card.address %></td>
+      <td><%= link_to 'Show', card_path(card) %></td>
+      <td><%= link_to 'Edit', edit_card_path(card) %></td>
+      <td><%= link_to 'Destroy', card_path(card),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  </div>
+  </div>
+  </form>
+
+<%= form_tag import_cards_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
