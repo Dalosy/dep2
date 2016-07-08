@@ -1,8 +1,10 @@
 <tr>
-  <td><%= @face.id %></td>
-  <td><%= @face.fio %></td>
-  <td><%= @face.position %></td>                    
-  <td><%= link_to 'Удалить', face_path(@face),class: 'row-remove-face new_face', remote: true,
-        method: :delete,
-        data: { confirm: 'Вы точно хотите удалить контактное лицо?' } %></td>
+    <td><%= @deal.id %></td>
+    <td><%= @deal.agreement %></td>
+    <td><%= @deal.summ %></td> 
+    <td><%= @deal.deal_date %></td>    
+    <td><%= link_to 'Редактировать', edit_deal_path(@deal) %></td>
+    <td><%= link_to 'Удалить', deal_path(@deal),  class: 'row-remove-deal new_deal', remote: true,
+          method: :delete,
+          data: { confirm: 'Вы точно хотите удалить сделку?' } %></td>
 </tr>

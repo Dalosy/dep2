@@ -1,7 +1,7 @@
 <tr>
 	<td><%= @telefone.id %></td>
 	<td><%= @telefone.number %></td>
-	<td><%= @telefone.face_id %></td>
+	<td><%= @telefone.face.fio %></td>
 	<td><%= @telefone.number_type %></td>
     <td><%= link_to 'Редактировать', edit_telefone_path(@telefone) %></td>
     <td><%= link_to 'Удалить', telefone_path(@telefone),class: 'row-remove-tel new_tel', remote: true,

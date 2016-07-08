@@ -21,13 +21,15 @@
   </div>
 
   <div class="col-md-8" >
-
+      <!-- Представление Мультитаб -->
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#panel1">Контакты</a></li>
             <li><a data-toggle="tab" href="#panel2">Сделки</a></li>
             <li><a data-toggle="tab" href="#panel3">Контактные лица</a></li>
         </ul>
        
+      <!-- Представление Контакты -->
+
       <div class="tab-content">
         <div id="panel1" class="tab-pane fade in active">
                 <div class="form-cards">
@@ -45,7 +47,7 @@
                   <tr>
                     <td><%= telefone.id %></td>
                     <td><%= telefone.number %></td>
-                    <td><%= telefone.face_id %></td>
+                    <td><%= telefone.face.fio %></td>
                     <td><%= telefone.number_type %></td>      
                     <td><%= link_to 'Редактировать', edit_telefone_path(telefone) %></td>
                     <td><%= link_to 'Удалить', telefone_path(telefone),class: 'row-remove-tel', remote: true,
@@ -84,8 +86,8 @@
         </div>
 
 
-        
-        
+        <!-- Представление Сделки -->
+
         <div id="panel2" class="tab-pane fade">
                   <div class="form-cards">
                   <table class="table table-hover new_deals">
@@ -150,6 +152,7 @@
 
         </div>
 
+        <!-- Представление Контактные лица -->
 
         <div id="panel3" class="tab-pane fade">
                 <div class="form-cards">
